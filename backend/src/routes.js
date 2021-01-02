@@ -6,9 +6,19 @@ const routes = Router();
 require('./models/Tarefa');
 const TarefaModel = mongoose.model('Tarefa')
 
-routes.post('/tarefas', function(request, response) {
-    //console.log(request.body);
+//listando tarefa
+routes.get('/tarefas', function(request, response) {
+    TarefaModel.find()
+        .then((tarefas) => {
+            response.json(tarefas)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+});
 
+//criando tarefa
+routes.post('/tarefas', function(request, response) {
     TarefaModel.create(request.body)
         .then((data) => {
             console.log('sucesso! ')
