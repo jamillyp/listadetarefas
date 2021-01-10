@@ -1,33 +1,22 @@
 const { Router } = require('express');
-const mongoose = require('mongoose');
+
+const { criarTarefa, listarTarefas, listarUmaTarefa, editarTarefa, excluirTarefa } = require('./controllers');
 
 const routes = Router();
 
-require('./models/Tarefa');
-const TarefaModel = mongoose.model('Tarefa')
+// rota para criar uma tarefa
+routes.post('/tarefas', criarTarefa);
 
-//listando tarefa
-routes.get('/tarefas', function(request, response) {
-    TarefaModel.find()
-        .then((tarefas) => {
-            response.json(tarefas)
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-});
+// rota para listar tarefas
+routes.get('/tarefas', listarTarefas);
 
-//criando tarefa
-routes.post('/tarefas', function(request, response) {
-    TarefaModel.create(request.body)
-        .then((data) => {
-            console.log('sucesso! ')
-            console.log(data)
-            response.json(data)  
-        })
-        .catch((erro) => {
-            console.log(erro)
-        })
-});
+// rota para listar uma única tarefa por seu id
+routes.get('/tarefas/:id', listarUmaTarefa);
+
+// rota para editar uma tarefa por seu id
+routes.put('/tarefas/:id', editarTarefa);
+
+// rota para deletar uma tarefa por seu id
+routes.delete('/tarefas/:id', excluirTarefa);
 
 module.exports = routes;
