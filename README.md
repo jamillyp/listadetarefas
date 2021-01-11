@@ -11,7 +11,7 @@ A seguir execute o comando abaixo para instalar as dependências utilizadas ness
 - npm install <br />
 
 # run <br />
-Para rodar esse projeto após as instalações deverá ser executado o seguinte comando: <br /><br />
+Para rodar esse projeto após as instalações deverá ser executado o seguinte comando: <br />
 - yarn dev
 
 
