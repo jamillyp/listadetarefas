@@ -1,8 +1,8 @@
 # listadetarefas
 
-- Instalação <br />
+# Instalação <br />
 Para esse projeto são necessários algumas instalações. Ao baixar o projeto execute o comando a seguir: <br />
 
-<ol>npm install </ol>
+- npm install
 
 
