@@ -3,4 +3,4 @@
 - Instalação
 Para esse projeto são necessários algumas instalações.
 
-* yarn add node *
+1 yarn add node 
