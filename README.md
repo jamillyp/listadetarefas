@@ -1,4 +1,5 @@
-# listadetarefas
+# listadetarefas <br />
+Sistema no qual um usuário poderá inserir tarefas, editar tarefas, excluir tarefas e buscar por tarefas cadastradas.
 
 # Instalação <br />
 Para esse projeto são necessários algumas instalações de dependências. Ao baixar o projeto siga os passos a seguir: <br />
