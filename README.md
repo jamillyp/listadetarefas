@@ -10,7 +10,7 @@ Após a instalação do node.js a biblioteca npm será instalada junto, basta en
 A seguir execute o comando abaixo para instalar as dependências utilizadas nesse projeto:<br /><br />
 - npm install <br />
 
-#run <br />
+# run <br />
 Para rodar esse projeto após as instalações deverá ser executado o seguinte comando: <br /><br />
 - yarn dev
 
