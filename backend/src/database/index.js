@@ -1,18 +1,16 @@
 const Sequelize = require('sequelize');
+const dbConfig = require('../config/database');
 
-//config sequelize
-const sequelize = new Sequelize('listaTarefa', 'root', 'SenhaDIFICIL12', {
-    host: "localhost",
-    dialect: "mysql"
-}) ;
+const Tarefa = require('../models/Tarefa');
 
-sequelize.authenticate().then(function(){
-    console.log("banco conectado com sucesso")
-}).catch(function(erro){
-    console.log("falha ao se conectar: "+erro)
+const connection = new Sequelize(dbConfig);
+
+connection.authenticate().then(function(){
+    console.log("banco conectado com sucesso! ")
+}).catch(function(err){
+    console.log("falha ao se conectar com banco: "+ err)
 });
 
-module.exports = {
-    sequelize: sequelize,
-    Sequelize: Sequelize
-}
+Tarefa.init(connection);
+
+module.exports = connection;
